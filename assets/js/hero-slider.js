@@ -18,7 +18,7 @@
       ctaHref: "automotive.html",
       ctaLabel: "Explore vehicles",
       image:
-        "assets/images/unsplash-1549317661-bd32c8ce0db2.jpg",
+        "assets/images/unsplash-semi-truck-hero.jpg",
     },
     {
       tag: "Tours & travel",
@@ -38,7 +38,7 @@
       ctaHref: "contact.html",
       ctaLabel: "Get a quote",
       image:
-        "assets/images/unsplash-1522071820081-009f0129c71c.jpg",
+        "assets/images/unsplash-container-trailer-hero.jpg",
     },
   ];
 
