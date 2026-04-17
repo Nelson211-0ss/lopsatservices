@@ -8,7 +8,7 @@
       ctaHref: "logistics.html",
       ctaLabel: "Our solutions",
       image:
-        "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=2400&q=82",
+        "assets/images/unsplash-1586528116311-ad8dd3c8310d.jpg",
     },
     {
       tag: "Automotive imports",
@@ -18,7 +18,7 @@
       ctaHref: "automotive.html",
       ctaLabel: "Explore vehicles",
       image:
-        "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=2400&q=82",
+        "assets/images/unsplash-1549317661-bd32c8ce0db2.jpg",
     },
     {
       tag: "Tours & travel",
@@ -28,7 +28,7 @@
       ctaHref: "travel.html",
       ctaLabel: "Plan travel",
       image:
-        "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=2400&q=82",
+        "assets/images/unsplash-1436491865332-7a61a109cc05.jpg",
     },
     {
       tag: "Partners worldwide",
@@ -38,7 +38,7 @@
       ctaHref: "contact.html",
       ctaLabel: "Get a quote",
       image:
-        "https://images.unsplash.com/photo-1578575437180-5a1bb87d5e76?auto=format&fit=crop&w=2400&q=82",
+        "assets/images/unsplash-1522071820081-009f0129c71c.jpg",
     },
   ];
 
