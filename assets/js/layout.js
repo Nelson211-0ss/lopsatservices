@@ -87,32 +87,61 @@
     }
   }
 
-  function needsRemotePartials() {
+  function needsRemoteHeader() {
     var h = document.getElementById("site-header");
-    if (!h) return false;
-    return !h.querySelector(".sticky, .fixed");
+    return !!(h && !h.querySelector(".sticky, .fixed"));
+  }
+
+  function needsRemoteFooter() {
+    var f = document.getElementById("site-footer");
+    return !!(f && !f.querySelector("footer"));
   }
 
   async function loadPartialsFromDisk() {
     var headerHost = document.getElementById("site-header");
     var footerHost = document.getElementById("site-footer");
     var base = document.documentElement.dataset.basePath || "";
+    var loadHeader = needsRemoteHeader();
+    var loadFooter = needsRemoteFooter();
+
+    if (!loadHeader && !loadFooter) {
+      if (headerHost) headerHost.removeAttribute("aria-busy");
+      return;
+    }
+
     try {
-      var results = await Promise.all([
-        fetch(base + "partials/header.html").then(function (r) {
+      if (loadHeader && loadFooter) {
+        var results = await Promise.all([
+          fetch(base + "partials/header.html").then(function (r) {
+            if (!r.ok) throw new Error("header");
+            return r.text();
+          }),
+          fetch(base + "partials/footer.html").then(function (r) {
+            if (!r.ok) throw new Error("footer");
+            return r.text();
+          }),
+        ]);
+        if (headerHost) {
+          headerHost.innerHTML = results[0];
+          headerHost.removeAttribute("aria-busy");
+        }
+        if (footerHost) footerHost.innerHTML = results[1];
+      } else if (loadHeader) {
+        var headerHtml = await fetch(base + "partials/header.html").then(function (r) {
           if (!r.ok) throw new Error("header");
           return r.text();
-        }),
-        fetch(base + "partials/footer.html").then(function (r) {
+        });
+        if (headerHost) {
+          headerHost.innerHTML = headerHtml;
+          headerHost.removeAttribute("aria-busy");
+        }
+      } else if (loadFooter) {
+        var footerHtml = await fetch(base + "partials/footer.html").then(function (r) {
           if (!r.ok) throw new Error("footer");
           return r.text();
-        }),
-      ]);
-      if (headerHost) {
-        headerHost.innerHTML = results[0];
-        headerHost.removeAttribute("aria-busy");
+        });
+        if (footerHost) footerHost.innerHTML = footerHtml;
       }
-      if (footerHost) footerHost.innerHTML = results[1];
     } catch (e) {
       if (headerHost) {
         headerHost.removeAttribute("aria-busy");
@@ -139,12 +168,7 @@
   }
 
   async function boot() {
-    if (needsRemotePartials()) {
-      await loadPartialsFromDisk();
-    } else {
-      var headerHost = document.getElementById("site-header");
-      if (headerHost) headerHost.removeAttribute("aria-busy");
-    }
+    await loadPartialsFromDisk();
     if (typeof tailwind !== "undefined" && typeof tailwind.refresh === "function") {
       tailwind.refresh();
     }
