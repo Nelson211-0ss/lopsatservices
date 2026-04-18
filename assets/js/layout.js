@@ -97,16 +97,16 @@
     return !!(f && !f.querySelector("footer"));
   }
 
-  function sitePathPrefix() {
-    var raw = document.documentElement.getAttribute("data-base-path");
-    if (raw === null || raw === "") return "/";
-    return raw.replace(/\/*$/, "/");
+  /** Relative URL to partials (same folder layout as on disk: partials/ next to *.html). */
+  function partialUrl(file) {
+    var p = document.documentElement.getAttribute("data-base-path");
+    if (p === null || p === "") return "partials/" + file;
+    return p.replace(/\/*$/, "/") + "partials/" + file;
   }
 
   async function loadPartialsFromDisk() {
     var headerHost = document.getElementById("site-header");
     var footerHost = document.getElementById("site-footer");
-    var root = sitePathPrefix();
     var loadHeader = needsRemoteHeader();
     var loadFooter = needsRemoteFooter();
 
@@ -118,11 +118,11 @@
     try {
       if (loadHeader && loadFooter) {
         var results = await Promise.all([
-          fetch(root + "partials/header.html").then(function (r) {
+          fetch(partialUrl("header.html")).then(function (r) {
             if (!r.ok) throw new Error("header");
             return r.text();
           }),
-          fetch(root + "partials/footer.html").then(function (r) {
+          fetch(partialUrl("footer.html")).then(function (r) {
             if (!r.ok) throw new Error("footer");
             return r.text();
           }),
@@ -133,7 +133,7 @@
         }
         if (footerHost) footerHost.innerHTML = results[1];
       } else if (loadHeader) {
-        var headerHtml = await fetch(root + "partials/header.html").then(function (r) {
+        var headerHtml = await fetch(partialUrl("header.html")).then(function (r) {
           if (!r.ok) throw new Error("header");
           return r.text();
         });
@@ -142,7 +142,7 @@
           headerHost.removeAttribute("aria-busy");
         }
       } else if (loadFooter) {
-        var footerHtml = await fetch(root + "partials/footer.html").then(function (r) {
+        var footerHtml = await fetch(partialUrl("footer.html")).then(function (r) {
           if (!r.ok) throw new Error("footer");
           return r.text();
         });
