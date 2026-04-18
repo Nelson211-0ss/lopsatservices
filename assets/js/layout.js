@@ -99,11 +99,24 @@
     return !!(f && !f.querySelector("footer"));
   }
 
-  /** Relative URL to partials (same folder layout as on disk: partials/ next to *.html). */
+  /**
+   * Partials live at /partials/… on the server. Root-relative URLs avoid broken fetches when the
+   * page URL is not a sibling of partials/ (e.g. clean URLs, rewrites, or trailing-slash paths).
+   */
   function partialUrl(file) {
-    var p = document.documentElement.getAttribute("data-base-path");
-    if (p === null || p === "") return "partials/" + file;
-    return p.replace(/\/*$/, "/") + "partials/" + file;
+    var suffix = "partials/" + file;
+    var raw = document.documentElement.getAttribute("data-base-path");
+    var base = raw == null ? "" : String(raw).trim();
+    var http =
+      typeof location !== "undefined" &&
+      location.protocol &&
+      /^https?:$/i.test(location.protocol);
+    if (base !== "") {
+      var seg = base.replace(/^\/+/, "").replace(/\/+$/, "");
+      var joined = (seg ? "/" + seg + "/" : "/") + suffix;
+      return http ? joined : suffix;
+    }
+    return http ? "/" + suffix : suffix;
   }
 
   async function loadPartialsFromDisk() {
@@ -153,10 +166,18 @@
     } catch (e) {
       if (headerHost) {
         headerHost.removeAttribute("aria-busy");
-        if (!headerHost.querySelector(".sticky, .fixed")) {
+        if (loadHeader && !headerHost.querySelector(".sticky, .fixed")) {
           headerHost.innerHTML =
             '<p class="bg-slate-800 px-4 py-3 text-center text-sm text-amber-200">Header partial could not load. Open <code class="rounded bg-slate-900 px-1 font-mono text-xs text-slate-200">index.html</code> from this folder (header/footer are inlined), or serve via HTTP.</p>';
         }
+      }
+      if (
+        footerHost &&
+        loadFooter &&
+        !footerHost.querySelector("footer")
+      ) {
+        footerHost.innerHTML =
+          '<div class="border-t border-zinc-800 bg-zinc-950 px-4 py-8 text-center text-sm text-amber-200"><p>Footer could not load. Upload the <code class="rounded bg-black px-1.5 py-0.5 font-mono text-xs text-zinc-200">partials/</code> folder and confirm <code class="rounded bg-black px-1.5 py-0.5 font-mono text-xs text-zinc-200">/partials/footer.html</code> returns 200 in the browser.</p></div>';
       }
       console.error(e);
     }
