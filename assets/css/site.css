@@ -291,3 +291,144 @@ main a[class*="bg-blue-600"]:active {
     filter: none;
   }
 }
+
+/* —— Logistics page (modern layout + Feather) —— */
+.logistics-page .log-feather {
+  width: 1.125rem;
+  height: 1.125rem;
+  flex-shrink: 0;
+  stroke-width: 2;
+}
+
+.logistics-page .log-icon-ring {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.875rem;
+  background: linear-gradient(145deg, rgba(12, 142, 231, 0.2), rgba(7, 40, 73, 0.6));
+  border: 1px solid rgba(56, 189, 248, 0.22);
+  color: rgb(125, 211, 252);
+}
+
+.logistics-page .log-icon-ring--sm {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.625rem;
+}
+
+.logistics-page .log-icon-ring--sm svg {
+  width: 0.875rem !important;
+  height: 0.875rem !important;
+}
+
+.logistics-page .log-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(51, 65, 85, 0.65);
+  background: linear-gradient(165deg, rgba(15, 23, 42, 0.75) 0%, rgba(7, 40, 73, 0.35) 100%);
+  box-shadow:
+    0 1px 0 0 rgba(255, 255, 255, 0.04) inset,
+    0 24px 48px -28px rgba(0, 0, 0, 0.65);
+  transition:
+    border-color 0.35s ease,
+    box-shadow 0.45s ease,
+    transform 0.45s cubic-bezier(0.34, 1.25, 0.64, 1);
+}
+
+.logistics-page .log-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(800px 200px at 10% -20%, rgba(56, 189, 248, 0.12), transparent 55%);
+  transition: opacity 0.4s ease;
+}
+
+.logistics-page .log-card:hover {
+  border-color: rgba(56, 189, 248, 0.35);
+  box-shadow:
+    0 1px 0 0 rgba(255, 255, 255, 0.06) inset,
+    0 28px 56px -24px rgba(0, 0, 0, 0.7),
+    0 0 0 1px rgba(56, 189, 248, 0.08);
+  transform: translateY(-4px);
+}
+
+.logistics-page .log-card:hover::before {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logistics-page .log-card:hover {
+    transform: none;
+  }
+}
+
+.logistics-page .log-card-media {
+  position: relative;
+  aspect-ratio: 21 / 9;
+  max-height: 13rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  .logistics-page .log-card-media {
+    max-height: 15rem;
+  }
+}
+
+.logistics-page .log-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.logistics-page .log-card:hover .log-card-media img {
+  transform: scale(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logistics-page .log-card:hover .log-card-media img {
+    transform: none;
+  }
+}
+
+.logistics-page .log-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(71, 85, 105, 0.7);
+  background: rgba(15, 23, 42, 0.65);
+  padding: 0.5rem 1rem 0.5rem 0.65rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: rgb(226, 232, 240);
+  transition:
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.logistics-page .log-chip:hover {
+  border-color: rgba(56, 189, 248, 0.45);
+  background: rgba(12, 142, 231, 0.12);
+  color: rgb(255, 255, 255);
+}
+
+.logistics-page .log-stat {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(51, 65, 85, 0.5);
+  background: rgba(2, 6, 23, 0.45);
+  padding: 0.875rem 1rem;
+  backdrop-filter: blur(8px);
+}

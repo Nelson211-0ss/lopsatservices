@@ -45,7 +45,7 @@
     </script>
     <link rel="stylesheet" href="assets/css/site.css" />
   </head>
-  <body class="bg-brand-950 font-sans text-slate-300 antialiased">
+  <body class="logistics-page bg-brand-950 font-sans text-slate-300 antialiased">
     <div id="site-header">
 <div class="fixed inset-x-0 top-0 z-50 shadow-lg shadow-black/20">
   <div class="relative bg-blue-700 text-white">
@@ -246,7 +246,7 @@
     </div>
 
     <main id="page-main">
-      <header class="page-hero-band relative min-h-[24rem] overflow-hidden border-b border-slate-800/60 sm:min-h-[28rem] lg:min-h-[32rem]">
+      <header class="page-hero-band relative min-h-[26rem] overflow-hidden border-b border-slate-800/60 sm:min-h-[30rem] lg:min-h-[34rem]">
         <img
           src="/unsplash-container-trailer-hero.jpg"
           alt="Shipping containers stacked at a freight terminal"
@@ -255,187 +255,361 @@
           class="absolute inset-0 h-full w-full object-cover"
           fetchpriority="high"
         />
-        <div class="absolute inset-0 bg-gradient-to-r from-brand-950 via-brand-950/90 to-brand-950/50"></div>
-        <div class="pointer-events-none absolute inset-0 page-hero-mesh opacity-45" aria-hidden="true"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-brand-950 via-brand-950/92 to-brand-900/55"></div>
+        <div class="pointer-events-none absolute inset-0 page-hero-mesh opacity-50" aria-hidden="true"></div>
         <div class="page-hero-line relative">
-          <div class="relative mx-auto max-w-7xl px-4 pb-14 pt-12 sm:px-6 sm:pb-16 sm:pt-16 lg:px-8 lg:pb-20 lg:pt-24">
-            <nav class="text-xs font-semibold uppercase tracking-wide text-slate-500" aria-label="Breadcrumb">
-              <a href="index.html" class="transition hover:text-blue-400">Home</a>
-              <span class="mx-2 text-slate-600" aria-hidden="true">/</span>
+          <div class="relative mx-auto max-w-7xl px-4 pb-16 pt-12 sm:px-6 sm:pb-20 sm:pt-16 lg:px-8 lg:pb-24 lg:pt-24">
+            <nav
+              class="flex flex-wrap items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-slate-500"
+              aria-label="Breadcrumb"
+            >
+              <a href="index.html" class="inline-flex items-center gap-1.5 transition hover:text-blue-400">
+                <i data-feather="home" class="log-feather" aria-hidden="true"></i>
+                Home
+              </a>
+              <i data-feather="chevron-right" class="log-feather text-slate-600" aria-hidden="true"></i>
               <span class="text-slate-400">Logistics</span>
             </nav>
-            <p class="mt-6 text-[11px] font-bold uppercase tracking-[0.22em] text-blue-400/90" data-reveal>Freight &amp; forwarding</p>
-            <h1 class="mt-3 max-w-3xl font-display text-4xl font-bold tracking-tight text-white sm:text-5xl" data-reveal>
-              Logistics built for speed, compliance, and cost control
-            </h1>
-            <p class="mt-5 max-w-2xl text-lg leading-relaxed text-slate-400" data-reveal>
-              Air, road, and sea capabilities supported by customs clearance, port handling, and warehousing—mirroring
-              the service mix published on lopsatservicesltd.com.
-            </p>
-            <div class="mt-8 flex flex-wrap gap-3 text-sm font-semibold" data-reveal>
-              <a href="#air-freight" class="rounded-full border border-slate-600 bg-slate-900/50 px-4 py-2 text-slate-200 transition hover:border-blue-500/40 hover:text-white">Air</a>
-              <a href="#road-freight" class="rounded-full border border-slate-600 bg-slate-900/50 px-4 py-2 text-slate-200 transition hover:border-blue-500/40 hover:text-white">Road</a>
-              <a href="#sea-freight" class="rounded-full border border-slate-600 bg-slate-900/50 px-4 py-2 text-slate-200 transition hover:border-blue-500/40 hover:text-white">Sea</a>
-              <a href="#customs" class="rounded-full border border-slate-600 bg-slate-900/50 px-4 py-2 text-slate-200 transition hover:border-blue-500/40 hover:text-white">Customs &amp; port</a>
+
+            <div class="mt-8 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+              <div class="max-w-3xl">
+                <p class="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.22em] text-sky-300/95" data-reveal>
+                  <i data-feather="package" class="log-feather text-sky-400" aria-hidden="true"></i>
+                  Freight &amp; forwarding
+                </p>
+                <h1 class="mt-4 font-display text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-[2.75rem] lg:leading-tight" data-reveal>
+                  Logistics built for speed, compliance, and cost control
+                </h1>
+                <p class="mt-5 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg" data-reveal>
+                  Air, road, and sea—backed by customs, port handling, and warehousing. One coordinated team from Juba to
+                  your final mile.
+                </p>
+                <div class="mt-8 flex flex-wrap items-center gap-3" data-reveal>
+                  <a
+                    href="contact.html"
+                    class="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-blue-950/40 transition hover:bg-blue-500"
+                  >
+                    Get a quote
+                    <i data-feather="arrow-right" class="log-feather" aria-hidden="true"></i>
+                  </a>
+                  <a
+                    href="#capabilities"
+                    class="inline-flex items-center gap-2 rounded-xl border border-slate-500/70 bg-slate-950/40 px-5 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition hover:border-sky-500/50 hover:bg-slate-900/60"
+                  >
+                    <i data-feather="layers" class="log-feather" aria-hidden="true"></i>
+                    Explore services
+                  </a>
+                </div>
+              </div>
+
+              <div class="grid w-full max-w-md shrink-0 grid-cols-1 gap-3 sm:grid-cols-2 lg:max-w-sm lg:grid-cols-1" data-reveal-stagger>
+                <div class="log-stat">
+                  <span class="log-icon-ring" aria-hidden="true"><i data-feather="clock" class="log-feather"></i></span>
+                  <div>
+                    <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Response</p>
+                    <p class="mt-0.5 text-sm font-semibold text-white">Same-day enquiry handling</p>
+                  </div>
+                </div>
+                <div class="log-stat">
+                  <span class="log-icon-ring" aria-hidden="true"><i data-feather="map-pin" class="log-feather"></i></span>
+                  <div>
+                    <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Hub</p>
+                    <p class="mt-0.5 text-sm font-semibold text-white">Juba · Airport Rd</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-10 flex flex-wrap gap-2.5" data-reveal>
+              <a href="#air-freight" class="log-chip">
+                <span class="log-icon-ring log-icon-ring--sm" aria-hidden="true"><i data-feather="send"></i></span>
+                Air
+              </a>
+              <a href="#road-freight" class="log-chip">
+                <span class="log-icon-ring log-icon-ring--sm" aria-hidden="true"><i data-feather="truck"></i></span>
+                Road
+              </a>
+              <a href="#sea-freight" class="log-chip">
+                <span class="log-icon-ring log-icon-ring--sm" aria-hidden="true"><i data-feather="anchor"></i></span>
+                Sea
+              </a>
+              <a href="#customs" class="log-chip">
+                <span class="log-icon-ring log-icon-ring--sm" aria-hidden="true"><i data-feather="shield"></i></span>
+                Customs &amp; port
+              </a>
             </div>
           </div>
         </div>
       </header>
 
-      <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-        <p class="mx-auto max-w-3xl text-center text-slate-400 leading-relaxed" data-reveal>
-          Lopsat Services LTD is a logistics services company headquartered at Myraid business center, Juba-South Sudan (Airport R, Next to panaroma plaza). We offer a
-          broad portfolio including air freight services, road transportation, sea cargo, customs clearance, port
-          handling, warehousing, and tailor-made relocation support for corporate and residential clients.
-        </p>
+      <section
+        id="capabilities"
+        class="relative border-b border-slate-800/50 bg-gradient-to-b from-brand-950/80 via-slate-950 to-brand-950/40"
+      >
+        <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_90%_60%_at_50%_-10%,rgba(12,142,231,0.12),transparent_55%)]" aria-hidden="true"></div>
+        <div class="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+          <div class="grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-16">
+            <div class="lg:col-span-5" data-reveal>
+              <h2 class="font-display text-2xl font-bold tracking-tight text-white sm:text-3xl">End-to-end logistics</h2>
+              <p class="mt-4 text-slate-400 leading-relaxed">
+                Headquartered at Myraid business center, Juba-South Sudan, we run air freight, road transportation, sea
+                cargo, customs clearance, port handling, warehousing, and relocation programs for corporate and
+                residential clients.
+              </p>
+              <ul class="mt-8 space-y-4">
+                <li class="flex gap-3 text-sm text-slate-300">
+                  <span class="mt-0.5 text-sky-400" aria-hidden="true"><i data-feather="check-circle" class="log-feather"></i></span>
+                  Mode-neutral planning—right speed and cost for every lane
+                </li>
+                <li class="flex gap-3 text-sm text-slate-300">
+                  <span class="mt-0.5 text-sky-400" aria-hidden="true"><i data-feather="check-circle" class="log-feather"></i></span>
+                  Documentation and compliance support across borders
+                </li>
+                <li class="flex gap-3 text-sm text-slate-300">
+                  <span class="mt-0.5 text-sky-400" aria-hidden="true"><i data-feather="check-circle" class="log-feather"></i></span>
+                  Warehousing and distribution aligned to your network
+                </li>
+              </ul>
+            </div>
+            <div class="lg:col-span-7">
+              <div class="grid gap-4 sm:grid-cols-2" data-reveal-stagger>
+                <div class="rounded-2xl border border-slate-700/60 bg-slate-900/50 p-6 backdrop-blur-sm">
+                  <div class="log-icon-ring mb-4" aria-hidden="true"><i data-feather="globe" class="log-feather"></i></div>
+                  <h3 class="font-display text-lg font-semibold text-white">International reach</h3>
+                  <p class="mt-2 text-sm leading-relaxed text-slate-400">
+                    Agent network and counterparts for import, export, and flexible routing worldwide.
+                  </p>
+                </div>
+                <div class="rounded-2xl border border-slate-700/60 bg-slate-900/50 p-6 backdrop-blur-sm">
+                  <div class="log-icon-ring mb-4" aria-hidden="true"><i data-feather="trending-up" class="log-feather"></i></div>
+                  <h3 class="font-display text-lg font-semibold text-white">Cost-aware moves</h3>
+                  <p class="mt-2 text-sm leading-relaxed text-slate-400">
+                    Options that balance transit time, handling, and total landed cost on every shipment.
+                  </p>
+                </div>
+                <div class="rounded-2xl border border-slate-700/60 bg-slate-900/50 p-6 backdrop-blur-sm sm:col-span-2">
+                  <div class="flex flex-wrap items-start gap-4 sm:items-center sm:justify-between">
+                    <div class="flex items-start gap-3">
+                      <div class="log-icon-ring shrink-0" aria-hidden="true"><i data-feather="headphones" class="log-feather"></i></div>
+                      <div>
+                        <h3 class="font-display text-lg font-semibold text-white">Dedicated coordination</h3>
+                        <p class="mt-1 max-w-xl text-sm text-slate-400">
+                          Specialists stay close to your requirements from booking through delivery.
+                        </p>
+                      </div>
+                    </div>
+                    <a
+                      href="contact.html"
+                      class="inline-flex items-center gap-2 text-sm font-semibold text-sky-400 transition hover:text-sky-300"
+                    >
+                      Talk to us
+                      <i data-feather="arrow-right" class="log-feather" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <div class="mt-14 grid gap-8 lg:grid-cols-2">
-          <article
-            id="air-freight"
-            class="scroll-mt-header overflow-hidden rounded-2xl border border-slate-700/70 bg-slate-900/40 shadow-lg shadow-black/15"
-            data-reveal
-          >
-            <img
-              src="/unsplash-1436491865332-7a61a109cc05.jpg"
-              alt="View from an airplane window above the clouds"
-              width="1200"
-              height="480"
-              class="aspect-[21/9] max-h-52 w-full object-cover sm:max-h-60"
-              loading="lazy"
-            />
-            <div class="p-8 lg:p-10">
-            <h2 class="font-display text-2xl font-bold text-white">Air freight forwarding</h2>
-            <p class="mt-4 text-slate-400 leading-relaxed">
-              Lopsat Services Ltd provides a highly efficient network for freight forwarding and domestic air freight. It
-              delivers cargo across major locations of the country the very next day during business hours. With a
-              wide range of time-defined and specialist air cargo services, supported by preferred carriers, you get
-              flexibility between standardized connections with fixed schedules. Logistics experts evaluate your freight
-              size and budget to assist with the most appropriate, cost-effective movement.
+      <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+        <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between" data-reveal>
+          <div>
+            <p class="text-xs font-bold uppercase tracking-[0.2em] text-sky-400/90">Capability areas</p>
+            <h2 class="mt-2 font-display text-3xl font-bold text-white sm:text-4xl">How we move your cargo</h2>
+            <p class="mt-3 max-w-2xl text-slate-400">
+              Six focused service lines—each with clear ownership and the same operational standards across modes.
             </p>
+          </div>
+          <a
+            href="contact.html"
+            class="inline-flex items-center justify-center gap-2 self-start rounded-xl border border-slate-600 bg-slate-900/50 px-5 py-3 text-sm font-semibold text-white transition hover:border-sky-500/40 hover:bg-slate-800/80 sm:self-auto"
+          >
+            Request a quote
+            <i data-feather="arrow-right" class="log-feather" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <div class="mt-12 grid gap-6 lg:grid-cols-12">
+          <article id="air-freight" class="log-card scroll-mt-header lg:col-span-7" data-reveal>
+            <div class="log-card-media">
+              <img
+                src="/unsplash-1436491865332-7a61a109cc05.jpg"
+                alt="View from an airplane window above the clouds"
+                width="1200"
+                height="480"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent"></div>
+              <div class="absolute bottom-4 left-4 flex items-center gap-2 rounded-lg bg-slate-950/70 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-sky-300 backdrop-blur-md">
+                <i data-feather="send" class="log-feather" aria-hidden="true"></i>
+                Air freight
+              </div>
+            </div>
+            <div class="relative p-8 lg:p-9">
+              <h3 class="font-display text-xl font-bold text-white sm:text-2xl">Air freight forwarding</h3>
+              <p class="mt-4 text-slate-400 leading-relaxed">
+                Efficient freight forwarding and domestic air services—next-day options on key lanes during business hours.
+                Time-defined and specialist air cargo with preferred carriers; our team matches freight size and budget to
+                the right connection.
+              </p>
             </div>
           </article>
 
-          <article
-            id="road-freight"
-            class="scroll-mt-header overflow-hidden rounded-2xl border border-slate-700/70 bg-slate-900/40 shadow-lg shadow-black/15"
-            data-reveal
-          >
-            <img
-              src="/unsplash-1586528116493-a029325540fa.jpg"
-              alt="Semi-trailer truck on a highway at dusk"
-              width="1200"
-              height="480"
-              class="aspect-[21/9] max-h-52 w-full object-cover sm:max-h-60"
-              loading="lazy"
-            />
-            <div class="p-8 lg:p-10">
-            <h2 class="font-display text-2xl font-bold text-white">Road freight forwarding</h2>
-            <p class="mt-4 text-slate-400 leading-relaxed">
-              We offer a variety of customized and cost-effective solutions for transportation by road. Freight can be
-              transported to locations across South Sudan. A wide network, effective cargo movement facilities, and
-              client-oriented services make the company a preferred distribution solution provider. With an extensive
-              range of transport carriers, we can schedule inter-state deliveries to suit your time requirements, with
-              expert support for your supply chain needs.
-            </p>
+          <article id="road-freight" class="log-card scroll-mt-header lg:col-span-5" data-reveal>
+            <div class="log-card-media">
+              <img
+                src="/unsplash-1586528116493-a029325540fa.jpg"
+                alt="Semi-trailer truck on a highway at dusk"
+                width="1200"
+                height="480"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent"></div>
+              <div class="absolute bottom-4 left-4 flex items-center gap-2 rounded-lg bg-slate-950/70 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-sky-300 backdrop-blur-md">
+                <i data-feather="truck" class="log-feather" aria-hidden="true"></i>
+                Road
+              </div>
+            </div>
+            <div class="relative p-8 lg:p-9">
+              <h3 class="font-display text-xl font-bold text-white sm:text-2xl">Road freight forwarding</h3>
+              <p class="mt-4 text-slate-400 leading-relaxed">
+                Custom road solutions across South Sudan—scheduled inter-state deliveries, diverse carrier options, and
+                supply-chain support from dock to door.
+              </p>
             </div>
           </article>
 
-          <article
-            id="air-cargo"
-            class="scroll-mt-header overflow-hidden rounded-2xl border border-slate-700/70 bg-slate-900/40 shadow-lg shadow-black/15"
-            data-reveal
-          >
-            <img
-              src="/unsplash-1524661135-423995f22d0b.jpg"
-              alt="Cardboard shipping boxes stacked for dispatch"
-              width="1200"
-              height="480"
-              class="aspect-[21/9] max-h-52 w-full object-cover sm:max-h-60"
-              loading="lazy"
-            />
-            <div class="p-8 lg:p-10">
-            <h2 class="font-display text-2xl font-bold text-white">Air cargo service</h2>
-            <p class="mt-4 text-slate-400 leading-relaxed">
-              We have gained strong expertise in offering air cargo services. Whether raw materials, equipment, or
-              other commodities, we aim for convenient transportation without loss. Utilizing appropriate aircraft,
-              dispatch is completed within the promised timeframe under the guidance of our professional team. We track
-              industry developments and refine services to deliver the               best outcomes for clients.
-            </p>
+          <article id="air-cargo" class="log-card scroll-mt-header lg:col-span-5" data-reveal>
+            <div class="log-card-media">
+              <img
+                src="/unsplash-1524661135-423995f22d0b.jpg"
+                alt="Cardboard shipping boxes stacked for dispatch"
+                width="1200"
+                height="480"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent"></div>
+              <div class="absolute bottom-4 left-4 flex items-center gap-2 rounded-lg bg-slate-950/70 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-sky-300 backdrop-blur-md">
+                <i data-feather="box" class="log-feather" aria-hidden="true"></i>
+                Air cargo
+              </div>
+            </div>
+            <div class="relative p-8 lg:p-9">
+              <h3 class="font-display text-xl font-bold text-white sm:text-2xl">Air cargo service</h3>
+              <p class="mt-4 text-slate-400 leading-relaxed">
+                Raw materials, equipment, or general commodities—handled with appropriate aircraft and dispatch within
+                agreed windows. We refine processes as industry standards evolve to deliver the best outcomes.
+              </p>
             </div>
           </article>
 
-          <article
-            id="international-freight"
-            class="scroll-mt-header overflow-hidden rounded-2xl border border-slate-700/70 bg-slate-900/40 shadow-lg shadow-black/15"
-            data-reveal
-          >
-            <img
-              src="/unsplash-1494412574643-ff11b0a5c1c3.jpg"
-              alt="Aerial view of a busy container port and vessels"
-              width="1200"
-              height="480"
-              class="aspect-[21/9] max-h-52 w-full object-cover sm:max-h-60"
-              loading="lazy"
-            />
-            <div class="p-8 lg:p-10">
-            <h2 class="font-display text-2xl font-bold text-white">International freight forwarder</h2>
-            <p class="mt-4 text-slate-400 leading-relaxed">
-              We offer customized international freight forwarding solutions and have expanded services by connecting
-              different parts of the world. Clients benefit from options that can help reduce total logistics cost. We
-              stay in touch to target requirements and support importing, exporting, and domestic and international
-              flexibility, backed by a widespread network of               agents and counterparts across the globe.
-            </p>
+          <article id="international-freight" class="log-card scroll-mt-header lg:col-span-7" data-reveal>
+            <div class="log-card-media">
+              <img
+                src="/unsplash-1494412574643-ff11b0a5c1c3.jpg"
+                alt="Aerial view of a busy container port and vessels"
+                width="1200"
+                height="480"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent"></div>
+              <div class="absolute bottom-4 left-4 flex items-center gap-2 rounded-lg bg-slate-950/70 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-sky-300 backdrop-blur-md">
+                <i data-feather="globe" class="log-feather" aria-hidden="true"></i>
+                International
+              </div>
+            </div>
+            <div class="relative p-8 lg:p-9">
+              <h3 class="font-display text-xl font-bold text-white sm:text-2xl">International freight forwarder</h3>
+              <p class="mt-4 text-slate-400 leading-relaxed">
+                Tailored international forwarding linking regions worldwide—helping reduce total logistics cost while
+                supporting import, export, and flexible domestic hand-offs with agents and counterparts globally.
+              </p>
             </div>
           </article>
 
-          <article
-            id="sea-freight"
-            class="scroll-mt-header overflow-hidden rounded-2xl border border-slate-700/70 bg-slate-900/40 shadow-lg shadow-black/15"
-            data-reveal
-          >
-            <img
-              src="/unsplash-1578662996442-48f60103fc96.jpg"
-              alt="Large cargo ship on open water"
-              width="1200"
-              height="480"
-              class="aspect-[21/9] max-h-52 w-full object-cover sm:max-h-60"
-              loading="lazy"
-            />
-            <div class="p-8 lg:p-10">
-            <h2 class="font-display text-2xl font-bold text-white">Sea cargo</h2>
-            <p class="mt-4 text-slate-400 leading-relaxed">
-              Sea cargo services are part of our published portfolio alongside air and road modes. Engage our team to
-              align sailing schedules, documentation, and inland distribution from port to final destination.
-            </p>
+          <article id="sea-freight" class="log-card scroll-mt-header lg:col-span-6" data-reveal>
+            <div class="log-card-media">
+              <img
+                src="/unsplash-1578662996442-48f60103fc96.jpg"
+                alt="Large cargo ship on open water"
+                width="1200"
+                height="480"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent"></div>
+              <div class="absolute bottom-4 left-4 flex items-center gap-2 rounded-lg bg-slate-950/70 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-sky-300 backdrop-blur-md">
+                <i data-feather="anchor" class="log-feather" aria-hidden="true"></i>
+                Sea cargo
+              </div>
+            </div>
+            <div class="relative p-8 lg:p-9">
+              <h3 class="font-display text-xl font-bold text-white sm:text-2xl">Sea cargo</h3>
+              <p class="mt-4 text-slate-400 leading-relaxed">
+                Ocean freight alongside air and road—sailing schedules, documentation, and inland distribution from port
+                to final destination.
+              </p>
             </div>
           </article>
 
-          <article
-            id="customs"
-            class="scroll-mt-header overflow-hidden rounded-2xl border border-slate-700/70 bg-gradient-to-br from-brand-800/35 to-brand-950 shadow-lg shadow-black/15"
-            data-reveal
-          >
-            <img
-              src="/unsplash-1586528116311-ad8dd3c8310d.jpg"
-              alt="Forklift and pallets inside a distribution warehouse"
-              width="1200"
-              height="480"
-              class="aspect-[21/9] max-h-52 w-full object-cover sm:max-h-60"
-              loading="lazy"
-            />
-            <div class="p-8 lg:p-10">
-            <h2 class="font-display text-2xl font-bold text-white">Customs, port handling &amp; warehousing</h2>
-            <p class="mt-4 text-slate-400 leading-relaxed">
-              As highlighted on the company website, our broader logistics stack includes customs clearance, port
-              handling, and warehousing—designed to keep cargo flowing compliantly through hubs and into your network.
+          <article id="customs" class="log-card scroll-mt-header border-sky-500/25 bg-gradient-to-br from-sky-950/30 via-slate-900/60 to-brand-950 lg:col-span-6" data-reveal>
+            <div class="log-card-media">
+              <img
+                src="/unsplash-1586528116311-ad8dd3c8310d.jpg"
+                alt="Forklift and pallets inside a distribution warehouse"
+                width="1200"
+                height="480"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/20 to-transparent"></div>
+              <div class="absolute bottom-4 left-4 flex items-center gap-2 rounded-lg bg-sky-600/90 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-white shadow-lg backdrop-blur-md">
+                <i data-feather="shield" class="log-feather text-white" aria-hidden="true"></i>
+                Compliance
+              </div>
+            </div>
+            <div class="relative p-8 lg:p-9">
+              <h3 class="font-display text-xl font-bold text-white sm:text-2xl">Customs, port handling &amp; warehousing</h3>
+              <p class="mt-4 text-slate-300 leading-relaxed">
+                Clearance, port handling, and warehousing designed to keep cargo moving compliantly through hubs into your
+                network.
+              </p>
+              <a
+                href="contact.html"
+                class="mt-6 inline-flex items-center gap-2 rounded-lg bg-blue-600 px-5 py-3 text-sm font-bold uppercase tracking-wide text-white shadow-md transition hover:bg-blue-500"
+              >
+                Request a quote
+                <i data-feather="arrow-right" class="log-feather" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="border-t border-slate-800/60 bg-slate-900/35" data-reveal>
+        <div class="mx-auto flex max-w-7xl flex-col items-center gap-6 px-4 py-14 text-center sm:px-6 lg:flex-row lg:justify-between lg:px-8 lg:py-16 lg:text-left">
+          <div class="max-w-xl">
+            <h2 class="font-display text-2xl font-bold text-white sm:text-3xl">Ready to route your next shipment?</h2>
+            <p class="mt-3 text-slate-400">
+              Share lane, commodity, and timeline—we’ll respond with options that fit your budget and deadlines.
             </p>
+          </div>
+          <div class="flex flex-wrap items-center justify-center gap-3 lg:justify-end">
             <a
               href="contact.html"
-              class="mt-6 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-blue-400 transition hover:text-blue-300"
-              >Request a quote <span aria-hidden="true">→</span></a
+              class="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-blue-950/35 transition hover:bg-blue-500"
             >
-            </div>
-          </article>
+              Contact us
+              <i data-feather="arrow-right" class="log-feather" aria-hidden="true"></i>
+            </a>
+            <a
+              href="mailto:info@lopsatservicesltd.com?subject=Logistics%20quote%20request"
+              class="inline-flex items-center gap-2 rounded-xl border border-slate-600 bg-slate-950/50 px-5 py-3.5 text-sm font-semibold text-white transition hover:border-slate-500"
+            >
+              <i data-feather="mail" class="log-feather" aria-hidden="true"></i>
+              Email
+            </a>
+          </div>
         </div>
       </section>
     </main>
@@ -443,5 +617,18 @@
     <div id="site-footer"></div>
     <script src="assets/js/layout.js" defer></script>
     <script src="assets/js/animations.js" defer></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+      function logisticsFeather() {
+        if (typeof feather === "undefined") return;
+        feather.replace({ class: "log-feather", width: 18, height: 18, "stroke-width": 2 });
+      }
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", logisticsFeather);
+      } else {
+        logisticsFeather();
+      }
+      window.addEventListener("lopsat:layout-ready", logisticsFeather);
+    </script>
   </body>
 </html>
