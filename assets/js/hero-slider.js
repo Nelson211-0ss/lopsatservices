@@ -57,6 +57,7 @@
   var index = 0;
   var bgEls = [];
   var autoTimer = null;
+  var wired = false;
   var reduceMotion =
     typeof window !== "undefined" &&
     window.matchMedia &&
@@ -184,18 +185,30 @@
     }
   }
 
-  function init() {
+  /** Rebuild layers + UI (safe to call again after layout.js runs tailwind.refresh). */
+  function remount() {
     if (!$("hero-title")) return;
-    preloadImages();
+    clearAuto();
     buildBackgroundLayers();
-    wire();
     render();
     restartAuto();
   }
 
+  function tryInit() {
+    if (!$("hero-title")) return;
+    if (!wired) {
+      wired = true;
+      preloadImages();
+      wire();
+    }
+    remount();
+  }
+
+  window.addEventListener("lopsat:layout-ready", tryInit);
+
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", init);
+    document.addEventListener("DOMContentLoaded", tryInit);
   } else {
-    init();
+    tryInit();
   }
 })();
