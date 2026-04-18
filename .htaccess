@@ -1,0 +1,8 @@
+# Helps Apache find the right files (upload next to index.html / in public_html)
+Options -MultiViews
+
+<IfModule mod_mime.c>
+  AddType image/jpeg .jpg .jpeg
+  AddType image/png .png
+  AddType image/webp .webp
+</IfModule>
