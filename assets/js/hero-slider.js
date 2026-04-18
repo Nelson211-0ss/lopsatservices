@@ -1,21 +1,44 @@
 (function () {
   /**
-   * Match <img src="/file.jpg"> on the live site: use root-relative URLs on http(s).
-   * If data-base-path is set (e.g. "lopsat"), use "/lopsat/file.jpg".
-   * For file:// previews only, use a same-folder relative filename.
+   * Folder segment before /assets/js/hero-slider.js — fixes images on cPanel when the site lives in a
+   * subdirectory (e.g. /lopsatservices/) but <img> still uses root /file.jpg. data-base-path overrides.
+   */
+  function heroDirectoryBase() {
+    var raw = document.documentElement.getAttribute("data-base-path");
+    if (raw != null && String(raw).trim() !== "") {
+      var seg = String(raw).trim().replace(/^\/+/, "").replace(/\/+$/, "");
+      return seg ? "/" + seg : "";
+    }
+    if (typeof document === "undefined" || !document.getElementsByTagName) return "";
+    var scripts = document.getElementsByTagName("script");
+    for (var i = 0; i < scripts.length; i++) {
+      var src = scripts[i].src;
+      if (!src || src.indexOf("hero-slider.js") === -1) continue;
+      try {
+        var pathname = new URL(src, window.location.href).pathname;
+        var marker = "/assets/js/hero-slider.js";
+        var pos = pathname.lastIndexOf(marker);
+        if (pos === -1) continue;
+        return pathname.slice(0, pos);
+      } catch (err) {
+        continue;
+      }
+    }
+    return "";
+  }
+
+  /**
+   * Absolute-from-host paths on http(s). file:// uses same-folder filenames for local preview.
    */
   function heroAssetUrl(path) {
     var name = String(path).replace(/^\//, "");
-    var raw = document.documentElement.getAttribute("data-base-path");
-    var base = raw == null ? "" : String(raw).trim();
-    if (base !== "") {
-      var seg = base.replace(/^\/+/, "").replace(/\/+$/, "");
-      return seg ? "/" + seg + "/" + name : "/" + name;
-    }
-    if (typeof location !== "undefined" && /^https?:$/i.test(location.protocol)) {
-      return "/" + name;
-    }
-    return name;
+    var http =
+      typeof location !== "undefined" &&
+      location.protocol &&
+      /^https?:$/i.test(location.protocol);
+    if (!http) return name;
+    var base = heroDirectoryBase();
+    return (base || "") + "/" + name;
   }
 
   var slides = [
