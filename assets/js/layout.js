@@ -97,10 +97,16 @@
     return !!(f && !f.querySelector("footer"));
   }
 
+  function sitePathPrefix() {
+    var raw = document.documentElement.getAttribute("data-base-path");
+    if (raw === null || raw === "") return "/";
+    return raw.replace(/\/*$/, "/");
+  }
+
   async function loadPartialsFromDisk() {
     var headerHost = document.getElementById("site-header");
     var footerHost = document.getElementById("site-footer");
-    var base = document.documentElement.dataset.basePath || "";
+    var root = sitePathPrefix();
     var loadHeader = needsRemoteHeader();
     var loadFooter = needsRemoteFooter();
 
@@ -112,11 +118,11 @@
     try {
       if (loadHeader && loadFooter) {
         var results = await Promise.all([
-          fetch(base + "partials/header.html").then(function (r) {
+          fetch(root + "partials/header.html").then(function (r) {
             if (!r.ok) throw new Error("header");
             return r.text();
           }),
-          fetch(base + "partials/footer.html").then(function (r) {
+          fetch(root + "partials/footer.html").then(function (r) {
             if (!r.ok) throw new Error("footer");
             return r.text();
           }),
@@ -127,7 +133,7 @@
         }
         if (footerHost) footerHost.innerHTML = results[1];
       } else if (loadHeader) {
-        var headerHtml = await fetch(base + "partials/header.html").then(function (r) {
+        var headerHtml = await fetch(root + "partials/header.html").then(function (r) {
           if (!r.ok) throw new Error("header");
           return r.text();
         });
@@ -136,7 +142,7 @@
           headerHost.removeAttribute("aria-busy");
         }
       } else if (loadFooter) {
-        var footerHtml = await fetch(base + "partials/footer.html").then(function (r) {
+        var footerHtml = await fetch(root + "partials/footer.html").then(function (r) {
           if (!r.ok) throw new Error("footer");
           return r.text();
         });
