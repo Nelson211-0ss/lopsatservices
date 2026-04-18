@@ -249,34 +249,56 @@
     </div>
 
     <main id="page-main">
-      <header class="relative overflow-hidden border-b border-slate-800/60 bg-gradient-to-b from-brand-900/40 via-brand-950 to-brand-950">
-        <div
-          class="pointer-events-none absolute inset-0 opacity-[0.35]"
-          aria-hidden="true"
-          style="
-            background-image: radial-gradient(ellipse 80% 50% at 20% -20%, rgba(12, 142, 231, 0.25), transparent),
-              radial-gradient(ellipse 60% 40% at 90% 0%, rgba(59, 130, 246, 0.12), transparent);
-          "
-        ></div>
-        <div class="relative mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
-          <nav class="text-xs font-semibold uppercase tracking-wide text-slate-500" aria-label="Breadcrumb">
-            <a href="index.html" class="transition hover:text-blue-400">Home</a>
-            <span class="mx-2 text-slate-600" aria-hidden="true">/</span>
-            <span class="text-slate-400">Contact</span>
-          </nav>
-          <p class="mt-5 text-[11px] font-bold uppercase tracking-[0.22em] text-blue-400/90" data-reveal>Contact us</p>
-          <h1 class="mt-3 max-w-2xl font-display text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl" data-reveal>
-            Request a quote or tell us what you need
-          </h1>
-          <p class="mt-4 max-w-xl text-base leading-relaxed text-slate-400 sm:text-lg" data-reveal>
-            Send a message below—we’ll route it to the right desk for logistics, vehicles, or travel. You can also call or
-            email us directly.
-          </p>
+      <header class="relative min-h-[22rem] overflow-hidden border-b border-slate-800/60 sm:min-h-[26rem] lg:min-h-[28rem]">
+        <img
+          src="assets/images/unsplash-1423666639041-f56000c27a9a.jpg"
+          alt="Workspace with laptop and phone—get in touch with our team"
+          width="2000"
+          height="1125"
+          class="absolute inset-0 h-full w-full object-cover"
+          fetchpriority="high"
+        />
+        <div class="absolute inset-0 bg-gradient-to-r from-brand-950 via-brand-950/92 to-brand-950/55"></div>
+        <div class="pointer-events-none absolute inset-0 page-hero-mesh opacity-40" aria-hidden="true"></div>
+        <div class="page-hero-line relative">
+          <div class="relative mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+            <nav class="text-xs font-semibold uppercase tracking-wide text-slate-500" aria-label="Breadcrumb">
+              <a href="index.html" class="transition hover:text-blue-400">Home</a>
+              <span class="mx-2 text-slate-600" aria-hidden="true">/</span>
+              <span class="text-slate-400">Contact</span>
+            </nav>
+            <p class="mt-6 text-[11px] font-bold uppercase tracking-[0.22em] text-blue-400/90" data-reveal>Contact us</p>
+            <h1 class="mt-3 max-w-3xl font-display text-4xl font-bold tracking-tight text-white sm:text-5xl" data-reveal>
+              Request a quote or tell us what you need
+            </h1>
+            <p class="mt-5 max-w-2xl text-lg leading-relaxed text-slate-400" data-reveal>
+              Send a message using the form below—we’ll route it to the right desk for logistics, vehicles, or travel. You
+              can also call or email us anytime during office hours.
+            </p>
+            <div class="mt-8 flex flex-wrap gap-4" data-reveal>
+              <a
+                href="#contact-form-section"
+                class="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-blue-950/30 transition hover:bg-blue-500"
+                >Write a request</a
+              >
+              <a
+                href="mailto:sales@lopsatservicesltd.com"
+                class="inline-flex items-center gap-2 rounded-lg border border-slate-600 bg-slate-900/60 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:border-blue-500/50 hover:bg-slate-800/80"
+                >Email sales</a
+              >
+              <a
+                href="tel:+211925905745"
+                class="inline-flex items-center gap-2 rounded-lg border border-slate-600 bg-slate-900/40 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:border-blue-500/50 hover:bg-slate-800/80"
+                >Call Juba HQ</a
+              >
+            </div>
+          </div>
         </div>
       </header>
 
       <section
-        class="relative mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20"
+        id="contact-form-section"
+        class="relative mx-auto max-w-6xl scroll-mt-28 px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20"
         aria-labelledby="contact-form-heading"
       >
         <div class="grid gap-10 lg:grid-cols-12 lg:gap-14 lg:items-start">
@@ -506,31 +528,32 @@
               </ul>
             </div>
 
-            <div class="rounded-2xl border border-slate-700/60 bg-slate-900/35 p-6 backdrop-blur-sm sm:p-7">
-              <h3 class="font-display text-sm font-bold uppercase tracking-wide text-slate-500">Desk hours</h3>
-              <dl class="mt-4 space-y-4 text-sm text-slate-300">
-                <div>
-                  <dt class="text-xs font-semibold text-slate-500">Sales &amp; logistics</dt>
-                  <dd class="mt-1">Mon–Fri · 08:30–17:30 <span class="text-slate-500">(Juba time)</span></dd>
-                </div>
-                <div>
-                  <dt class="text-xs font-semibold text-slate-500">Travel &amp; ticketing</dt>
-                  <dd class="mt-1">Mon–Sat · 09:00–18:00 <span class="text-slate-500">(by appointment)</span></dd>
-                </div>
-              </dl>
-            </div>
-
-            <div class="rounded-2xl border border-dashed border-slate-600/70 bg-slate-950/30 p-6 text-center sm:text-left">
-              <p class="text-sm text-slate-400">
-                Full site:
+            <div class="overflow-hidden rounded-2xl border border-slate-700/60 bg-slate-900/35 backdrop-blur-sm">
+              <div class="border-b border-slate-700/50 px-6 py-4 sm:px-7">
+                <h3 class="font-display text-sm font-bold uppercase tracking-wide text-slate-500">Find us on the map</h3>
+                <p class="mt-1 text-xs leading-relaxed text-slate-500">
+                  Myraid business center, Airport R, Next to panaroma plaza, Juba, South Sudan.
+                </p>
+              </div>
+              <div class="aspect-[4/3] w-full bg-slate-950 sm:aspect-[16/10]">
+                <iframe
+                  title="Map showing Lopsat office area in Juba, South Sudan"
+                  src="https://maps.google.com/maps?q=Myraid+business+center%2C+Airport+Road%2C+Juba%2C+South+Sudan&amp;z=15&amp;ie=UTF8&amp;output=embed"
+                  class="h-full min-h-[220px] w-full border-0 sm:min-h-[260px]"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+              <div class="flex flex-wrap items-center justify-between gap-3 px-6 py-3 sm:px-7">
                 <a
-                  href="https://lopsatservicesltd.com"
-                  class="font-semibold text-blue-400 underline-offset-2 hover:text-blue-300 hover:underline"
+                  href="https://www.google.com/maps/search/?api=1&amp;query=Myraid+business+center%2C+Airport+Road%2C+Juba%2C+South+Sudan"
+                  class="text-sm font-semibold text-blue-400 transition hover:text-blue-300"
                   rel="noopener noreferrer"
                   target="_blank"
-                  >lopsatservicesltd.com</a
+                  >Open in Google Maps</a
                 >
-              </p>
+                <span class="text-[11px] text-slate-600">Drag or search in Maps to fine-tune the pin.</span>
+              </div>
             </div>
           </aside>
         </div>
