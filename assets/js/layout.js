@@ -4,10 +4,12 @@
     var headerEl = headerHost ? headerHost.querySelector(".fixed, .sticky") : null;
     if (!headerEl) {
       document.body.style.paddingTop = "";
+      document.documentElement.style.removeProperty("--site-header-height");
       return;
     }
     var headerHeight = Math.ceil(headerEl.getBoundingClientRect().height);
     document.body.style.paddingTop = String(headerHeight) + "px";
+    document.documentElement.style.setProperty("--site-header-height", headerHeight + "px");
   }
 
   function bindMobileNav() {
@@ -79,7 +81,7 @@
           return;
         }
         window.location.href =
-          "mailto:sales@lopsatservicesltd.com?subject=" +
+          "mailto:info@lopsatservicesltd.com?subject=" +
           encodeURIComponent("Newsletter signup") +
           "&body=" +
           encodeURIComponent("Please add this email to updates: " + v);

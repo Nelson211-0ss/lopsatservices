@@ -93,9 +93,9 @@
       String(message.value).trim() +
       "\n";
 
-    setStatus("Opening your email app… If nothing opens, email us at sales@lopsatservicesltd.com", false);
+    setStatus("Opening your email app… If nothing opens, email us at info@lopsatservicesltd.com", false);
     window.location.href =
-      "mailto:sales@lopsatservicesltd.com?subject=" +
+      "mailto:info@lopsatservicesltd.com?subject=" +
       encodeURIComponent(subject) +
       "&body=" +
       encodeURIComponent(body);

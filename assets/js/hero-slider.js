@@ -29,7 +29,7 @@
       tag: "Automotive imports",
       title: "Trusted new and used vehicles from global markets",
       desc:
-        "We supply durable cars sourced from Japan, the United Kingdom, Germany, and the United States. Tell us what you need and our sales team will guide delivery and documentation.",
+        "We supply durable cars sourced from Japan, the United Kingdom, Germany, and the United States. Tell us what you need and our team will guide delivery and documentation.",
       ctaHref: "automotive.html",
       ctaLabel: "Explore vehicles",
       image: "unsplash-semi-truck-hero.jpg",

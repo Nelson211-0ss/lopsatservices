@@ -1,5 +1,23 @@
 /* Lopsat — motion + polish (respects prefers-reduced-motion) */
 
+:root {
+  --site-header-height: 7.5rem;
+}
+
+html {
+  scroll-padding-top: var(--site-header-height);
+}
+
+/* Inner page heroes: breathing room below the fixed header (body padding + visual balance) */
+.page-hero-band {
+  scroll-margin-top: var(--site-header-height);
+}
+
+/* In-page anchors: offset fixed header (replaces fixed scroll-mt-28) */
+.scroll-mt-header {
+  scroll-margin-top: calc(var(--site-header-height) + 0.75rem);
+}
+
 @keyframes float-soft {
   0%,
   100% {
