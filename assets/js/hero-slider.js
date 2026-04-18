@@ -1,8 +1,8 @@
 (function () {
   /**
-   * Root-absolute "/file.jpg" breaks when the site is not at the domain root. Use the
-   * same folder as index.html (relative filename) or, if set, data-base-path as a mount
-   * segment (e.g. "/lopsat" or "lopsat" → "/lopsat/file.jpg").
+   * Match <img src="/file.jpg"> on the live site: use root-relative URLs on http(s).
+   * If data-base-path is set (e.g. "lopsat"), use "/lopsat/file.jpg".
+   * For file:// previews only, use a same-folder relative filename.
    */
   function heroAssetUrl(path) {
     var name = String(path).replace(/^\//, "");
@@ -11,6 +11,9 @@
     if (base !== "") {
       var seg = base.replace(/^\/+/, "").replace(/\/+$/, "");
       return seg ? "/" + seg + "/" + name : "/" + name;
+    }
+    if (typeof location !== "undefined" && /^https?:$/i.test(location.protocol)) {
+      return "/" + name;
     }
     return name;
   }
@@ -85,6 +88,17 @@
       var el = document.createElement("div");
       el.className =
         "hero-bg-layer absolute inset-0 bg-cover bg-center bg-no-repeat" + transitionClass;
+      /* Inline geometry + opacity transition so slides work if Tailwind CDN is blocked or slow. */
+      el.style.position = "absolute";
+      el.style.inset = "0";
+      el.style.backgroundSize = "cover";
+      el.style.backgroundPosition = "center";
+      el.style.backgroundRepeat = "no-repeat";
+      if (!reduceMotion) {
+        el.style.transitionProperty = "opacity";
+        el.style.transitionDuration = "1100ms";
+        el.style.transitionTimingFunction = "ease-in-out";
+      }
       el.style.backgroundImage = "url('" + heroAssetUrl(s.image).replace(/'/g, "\\'") + "')";
       el.style.opacity = i === 0 ? "1" : "0";
       el.setAttribute("aria-hidden", i === 0 ? "false" : "true");
