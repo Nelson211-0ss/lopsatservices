@@ -1,4 +1,20 @@
 (function () {
+  /**
+   * Root-absolute "/file.jpg" breaks when the site is not at the domain root. Use the
+   * same folder as index.html (relative filename) or, if set, data-base-path as a mount
+   * segment (e.g. "/lopsat" or "lopsat" → "/lopsat/file.jpg").
+   */
+  function heroAssetUrl(path) {
+    var name = String(path).replace(/^\//, "");
+    var raw = document.documentElement.getAttribute("data-base-path");
+    var base = raw == null ? "" : String(raw).trim();
+    if (base !== "") {
+      var seg = base.replace(/^\/+/, "").replace(/\/+$/, "");
+      return seg ? "/" + seg + "/" + name : "/" + name;
+    }
+    return name;
+  }
+
   var slides = [
     {
       tag: "Logistics & freight",
@@ -7,8 +23,7 @@
         "Lopsat Services Ltd is headquartered at Myraid business center, Juba-South Sudan (Airport R, Next to panaroma plaza). We move cargo by air, road, and sea; clear customs; handle ports and warehousing; and support corporate and residential relocations.",
       ctaHref: "logistics.html",
       ctaLabel: "Our solutions",
-      image:
-        "/unsplash-1586528116311-ad8dd3c8310d.jpg",
+      image: "unsplash-1586528116311-ad8dd3c8310d.jpg",
     },
     {
       tag: "Automotive imports",
@@ -17,8 +32,7 @@
         "We supply durable cars sourced from Japan, the United Kingdom, Germany, and the United States. Tell us what you need and our sales team will guide delivery and documentation.",
       ctaHref: "automotive.html",
       ctaLabel: "Explore vehicles",
-      image:
-        "/unsplash-semi-truck-hero.jpg",
+      image: "unsplash-semi-truck-hero.jpg",
     },
     {
       tag: "Tours & travel",
@@ -27,8 +41,7 @@
         "From single travelers to large groups, Lopsat Tours and Travel combines flexible itineraries with cost-saving options and the same professional standards as our logistics arm.",
       ctaHref: "travel.html",
       ctaLabel: "Plan travel",
-      image:
-        "/unsplash-1436491865332-7a61a109cc05.jpg",
+      image: "unsplash-1436491865332-7a61a109cc05.jpg",
     },
     {
       tag: "Partners worldwide",
@@ -37,8 +50,7 @@
         "Our network of agents and counterparts helps you import, export, and distribute with options that balance speed and total landed cost—backed by specialists who stay close to your requirements.",
       ctaHref: "contact.html",
       ctaLabel: "Get a quote",
-      image:
-        "/unsplash-container-trailer-hero.jpg",
+      image: "unsplash-container-trailer-hero.jpg",
     },
   ];
 
@@ -58,7 +70,7 @@
   function preloadImages() {
     slides.forEach(function (s) {
       var img = new Image();
-      img.src = s.image;
+      img.src = heroAssetUrl(s.image);
     });
   }
 
@@ -72,7 +84,7 @@
       var el = document.createElement("div");
       el.className =
         "hero-bg-layer absolute inset-0 bg-cover bg-center bg-no-repeat" + transitionClass;
-      el.style.backgroundImage = "url('" + s.image + "')";
+      el.style.backgroundImage = "url('" + heroAssetUrl(s.image).replace(/'/g, "\\'") + "')";
       el.style.opacity = i === 0 ? "1" : "0";
       el.setAttribute("aria-hidden", i === 0 ? "false" : "true");
       root.appendChild(el);
