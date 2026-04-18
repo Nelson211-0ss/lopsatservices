@@ -8,7 +8,7 @@
       ctaHref: "logistics.html",
       ctaLabel: "Our solutions",
       image:
-        "/images/unsplash-1586528116311-ad8dd3c8310d.jpg",
+        "/unsplash-1586528116311-ad8dd3c8310d.jpg",
     },
     {
       tag: "Automotive imports",
@@ -18,7 +18,7 @@
       ctaHref: "automotive.html",
       ctaLabel: "Explore vehicles",
       image:
-        "/images/unsplash-semi-truck-hero.jpg",
+        "/unsplash-semi-truck-hero.jpg",
     },
     {
       tag: "Tours & travel",
@@ -28,7 +28,7 @@
       ctaHref: "travel.html",
       ctaLabel: "Plan travel",
       image:
-        "/images/unsplash-1436491865332-7a61a109cc05.jpg",
+        "/unsplash-1436491865332-7a61a109cc05.jpg",
     },
     {
       tag: "Partners worldwide",
@@ -38,7 +38,7 @@
       ctaHref: "contact.html",
       ctaLabel: "Get a quote",
       image:
-        "/images/unsplash-container-trailer-hero.jpg",
+        "/unsplash-container-trailer-hero.jpg",
     },
   ];
 
