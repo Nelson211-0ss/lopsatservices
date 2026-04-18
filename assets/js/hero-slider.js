@@ -4,7 +4,7 @@
       tag: "Logistics & freight",
       title: "Reliable, fast, and secure logistics solutions",
       desc:
-        "Lopsat Services Ltd is headquartered in Juba, South Sudan. We move cargo by air, road, and sea; clear customs; handle ports and warehousing; and support corporate and residential relocations.",
+        "Lopsat Services Ltd is headquartered at Myraid business center, Juba-South Sudan (Airport R, Next to panaroma plaza). We move cargo by air, road, and sea; clear customs; handle ports and warehousing; and support corporate and residential relocations.",
       ctaHref: "logistics.html",
       ctaLabel: "Our solutions",
       image:
